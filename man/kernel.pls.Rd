@@ -72,11 +72,11 @@ Xtest<-matrix(rnorm(ntest*p),ncol=p) # test data
 ytest<-rnorm(ntest) # test data
 
 # compute linear PLS + degrees of freedom + prediction on Xtest
-linear.pls<-kernel.pls(X,y,m=ncol(X),compute.DoF=TRUE,Xtest=Xtest,ytest=NULL)
+linear.object<-kernel.pls(X,y,m=ncol(X),compute.DoF=TRUE,Xtest=Xtest,ytest=NULL)
 
 # compute nonlinear PLS + test error
 sigma=exp(seq(0,4,length=10))
-nonlinear.pls=kernel.pls(X,y,m=10,type="gaussian",sigma=sigma,Xtest=Xtest,ytest=ytest)
+nonlinear.object=kernel.pls(X,y,m=10,type="gaussian",sigma=sigma,Xtest=Xtest,ytest=ytest)
 }
 
 \keyword{multivariate}

@@ -34,6 +34,7 @@ relies on a sparse matrix decomposition of the predictor variables. The sparse s
 \item{DoF}{vector of Degrees of Freedom.}
 \item{RSS}{vector of residual sum of squares}
 \item{sigmahat}{vector of estimated model error}
+\item{TT}{matrix of latent components}
 }
 
 \references{

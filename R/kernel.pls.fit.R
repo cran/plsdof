@@ -94,5 +94,5 @@ function(K,y,m,compute.DoF,step.size){
         }
         sigmahat<-sqrt(RSS/denominator)
     }
-    return(list(Alpha=Alpha,dYhat=dYhat,Yhat=Yhat,DoF=DoF,RSS=RSS,sigmahat=sigmahat))
+    return(list(Alpha=Alpha,dYhat=dYhat,Yhat=Yhat,DoF=DoF,RSS=RSS,sigmahat=sigmahat,TT=TT))
 }

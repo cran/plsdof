@@ -4,16 +4,17 @@
 \alias{plsdof}
 \docType{package}
 \title{
-Degrees of Freedom of Partial Least Squares Regression
+Degrees of Freedom and Confidence Intervals for Partial Least Squares Regression
 }
-\description{The \code{psldof} package provides Degrees of Freedom estimates for Kernel Partial Least Squares Regression and its kernel extension. The package also provides model selection based on various information criteria (aic, bic, gmdl) and based on cross-validation.
+\description{The \code{plsdof} package provides Degrees of Freedom estimates for Kernel Partial Least Squares Regression and its kernel extension. The package also provides model selection based on various information criteria (aic, bic, gmdl) and based on cross-validation.
+For linear Partial Least Squares, the package computes the approximate distribution of the regression coefficients. This allows the construction of confidence intervals and tests.
 }
 \details{
 \tabular{ll}{
 Package: \tab plsdof\cr
 Type: \tab Package\cr
-Version: \tab 0.1\cr
-Date: \tab 2009-11-16\cr
+Version: \tab 0.1-1\cr
+Date: \tab 2009-11-27\cr
 License: \tab GPL (>=2)\cr
 LazyLoad: \tab yes\cr
 }
@@ -31,7 +32,7 @@ Kraemer, N., Braun, M.L. (2007) "Kernelizing PLS, Degrees of Freedom, and Effici
 
 
 \seealso{
-\code{\link{kernel.pls}}, \code{\link{kernel.pls.cv}}, \code{\link{kernel.pls.ic}}
+\code{\link{kernel.pls}}, \code{\link{kernel.pls.cv}}, \code{\link{kernel.pls.ic}},\code{\link{linear.pls}}
 
 }
 \keyword{ package }
