@@ -6,15 +6,14 @@
 \title{
 Degrees of Freedom and Confidence Intervals for Partial Least Squares Regression
 }
-\description{The \code{plsdof} package provides Degrees of Freedom estimates for Kernel Partial Least Squares Regression and its kernel extension. The package also provides model selection based on various information criteria (aic, bic, gmdl) and based on cross-validation.
-For linear Partial Least Squares, the package computes the approximate distribution of the regression coefficients. This allows the construction of confidence intervals and tests.
+\description{The \code{plsdof} provides Degrees of Freedom estimates and confidence intervals for Partial Least Squares Regression. The package also allows model selection based on various information criteria (aic, bic, gmdl) and based on cross-validation.
 }
 \details{
 \tabular{ll}{
 Package: \tab plsdof\cr
 Type: \tab Package\cr
-Version: \tab 0.1-1\cr
-Date: \tab 2009-11-27\cr
+Version: \tab 0.2\cr
+Date: \tab 2010-02-22\cr
 License: \tab GPL (>=2)\cr
 LazyLoad: \tab yes\cr
 }
@@ -26,13 +25,16 @@ Maintainer: Nicole Kraemer <nkraemer@cs.tu-berlin.de>
 }
 \references{
 
+Kraemer, N., Sugiyama M. (2010). "The Degrees of Freedom of Partial Least Squares Regression". preprint, \url{http://arxiv.org/abs/1002.4112}
+
+
 Kraemer, N., Braun, M.L. (2007) "Kernelizing PLS, Degrees of Freedom, and Efficient Model Selection", Proceedings of the 24th International Conference on Machine Learning, Omni Press, 441 - 448 
 
 }
 
 
 \seealso{
-\code{\link{kernel.pls}}, \code{\link{kernel.pls.cv}}, \code{\link{kernel.pls.ic}},\code{\link{linear.pls}}
+\code{\link{pls.model}}, \code{\link{pls.cv}}, \code{\link{pls.ic}}
 
 }
 \keyword{ package }

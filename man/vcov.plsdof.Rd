@@ -17,14 +17,18 @@ This function returns the variance-covariance matrix of a plsdof-object.
 \item{...}{additional parameters}
 }
 \details{
-The function returns the variance-covariance matrix for the optimal number of components.
+The function returns the variance-covariance matrix for the optimal number of components. It can be applied to objects returned by
+\code{pls.ic} and \code{pls.cv}.
 }
 \value{
 variance-covariance matrix
 }
 \references{
-Kraemer, N., Braun, M.L. (2007) "Kernelizing PLS, Degrees of Freedom, and Efficient Model Selection", Proceedings of the 24th International Conference on Machine Learning, Omni Press, 441 - 448 
+Kraemer, N., Sugiyama M. (2010). "The Degrees of Freedom of Partial Least Squares Regression". preprint, \url{http://arxiv.org/abs/1002.4112}
 
+
+
+Kraemer, N., Sugiyama M., Braun, M.L. (2009) "Lanczos Approximations for the Speedup of Kernel Partial Least Squares Regression." Proceedings of the Twelfth International Conference on Artificial Intelligence and Statistics (AISTATS), p. 272-279
 
 }
 \author{
@@ -35,7 +39,7 @@ Nicole Kraemer
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
- \code{\link{coef.plsdof}}, \code{\link{linear.pls}}
+ \code{\link{coef.plsdof}}, \code{\link{pls.ic}}, \code{\link{pls.cv}}
 }
 \examples{
 
@@ -45,7 +49,7 @@ X<-matrix(rnorm(n*p),ncol=p)
 y<-rnorm(n)
 
 
-pls.object<-linear.pls(X,y,m=5,model.selection="bic")
+pls.object<-pls.ic(X,y,m=5,criterion="bic")
 myvcov<-vcov(pls.object)
 }
 
