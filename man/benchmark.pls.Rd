@@ -6,7 +6,7 @@
 \description{This function computes the test error over several runs  for different model selection strategies.
 }
 \usage{
-benchmark.pls(X,y,m,R,ratio,verbose,k,ratio.samples,use.kernel=FALSE,criterion="bic")
+benchmark.pls(X,y,m,R,ratio,verbose,k,ratio.samples,use.kernel,criterion,true.coefficients)
 }
 \arguments{
  \item{X}{matrix of predictor observations.
@@ -23,6 +23,7 @@ benchmark.pls(X,y,m,R,ratio,verbose,k,ratio.samples,use.kernel=FALSE,criterion="
 \item{use.kernel}{Use kernel representation? Default is \code{use.kernel=FALSE}.}
   \item{criterion}{Choice of the model selection criterion. One of the three options aic, bic, gmdl. Default is "bic".
 }
+\item{true.coefficients}{The vector of true regression coefficients (without intercept), if available. Default is \code{NULL}.}
   
 
   
@@ -33,6 +34,8 @@ a Lanczos represenation of PLS and (4)  information criteri with the Degrees of 
 a Krylov represenation of PLS. Note that the latter two options only differ with respect to the estimation of the model error.
 
 In addition, the function computes the test error of the "zero model", i.e. \code{mean(y)} on the training data is used for prediction.
+
+If \code{true.coefficients} are available, the function also computes the model error for the different methods, i.e. the sum of squared differences between the true and the estimated regression coefficients.
 }
 \value{
 \item{MSE}{data frame of size R x 5. It contains the test error for the five different methods over the R runs.}
@@ -40,6 +43,8 @@ In addition, the function computes the test error of the "zero model", i.e. \cod
 \item{DoF}{data frame of size R x 5. It contains the optimal Degrees of Freedom for the five different methods over the R runs.}
 \item{TIME}{data frame of size R x 4. It contains the run for all methods (apart from the zero model) over the R runs.}
 \item{M.CRASH}{data frame of size R x 2. It contains the number of components for which the Krylov representation and the Lanczos representation return negative Degrees of Freedom, hereby indicating numerical problems.}
+\item{ME}{if \code{true.coefficients} are available, this is a data frame of size R x 5. It contains the model error for the five different methods over the R runs.}
+\item{SIGMAHAT}{data frame of size R x 5. It contains the estimation of the noise level provided  by the five different methods over the R runs.}
 
 }
 \references{

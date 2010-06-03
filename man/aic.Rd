@@ -22,7 +22,7 @@ aic(RSS, n, DoF, sigmahat)
 }
 \details{
 The aic criterion is defined as 
-\deqn{{bic}= \frac{{RSS}}{n} + 2\frac{{DoF}}{n} \sigma^ 2\,.}
+\deqn{{aic}= \frac{{RSS}}{n} + 2\frac{{DoF}}{n} \sigma^ 2\,.}
 Note that it is also possible to use this function for other regression methods than Partial Least Squares.
 }
 

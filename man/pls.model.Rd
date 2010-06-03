@@ -35,7 +35,7 @@ pls.model(X,y,m,Xtest=NULL,ytest=NULL,compute.DoF,compute.jacobian,use.kernel)
 \item{sigmahat}{vector of estimated model error}
 \item{Yhat}{matrix of  fitted values}
 \item{yhat}{vector of squared length of fitted values}
-\code{covariance}{if \code{compute.jacobian} is \code{TRUE}, the function returns the array of covariance matrices for the PLS regression coefficients.}
+\item{covariance}{if \code{compute.jacobian} is \code{TRUE}, the function returns the array of covariance matrices for the PLS regression coefficients.}
 \code{prediction}{if \code{Xtest} is provided, the predicted y-values for \code{Xtest}.}
 \code{mse}{if \code{Xtest} and \code{ytest} are provided, the mean squared error on the test data.} 
 }

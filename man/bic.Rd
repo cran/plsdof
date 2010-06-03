@@ -5,7 +5,7 @@
 \title{Bayesian information criterion
 }
 \description{
-This function This function computes the Akaike Information Criterion and its argmin.
+This function computes the Bayesian Information Criterion and its argmin.
 }
 \usage{
 bic(RSS, n, DoF, sigmahat)
@@ -28,7 +28,7 @@ Note that it is also possible to use this function for other regression methods 
 }
 
 \value{
-\item{score}{the vector of the aic values}
+\item{score}{the vector of the bic values}
 \item{par}{index of the first local minimum of \code{score}}
 }
 \references{

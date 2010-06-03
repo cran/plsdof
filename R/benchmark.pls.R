@@ -1,4 +1,4 @@
-benchmark.pls<-function(X,y,m=ncol(X),R=20,ratio=0.8,verbose=TRUE,k=10,ratio.samples=1,use.kernel=FALSE,criterion="bic"){
+benchmark.pls<-function(X,y,m=ncol(X),R=20,ratio=0.8,verbose=TRUE,k=10,ratio.samples=1,use.kernel=FALSE,criterion="bic",true.coefficients=NULL){
     n<-floor(nrow(X)*ratio.samples)
     m.crash.krylov<-m.crash.lanczos<-vector(length=R)
     m.cv<-m.krylov<-m.naive<-m.lanczos<-vector(length=R)
@@ -6,8 +6,12 @@ benchmark.pls<-function(X,y,m=ncol(X),R=20,ratio=0.8,verbose=TRUE,k=10,ratio.sam
     time.cv<-time.krylov<-time.naive<-time.lanczos<-vector(length=R)
     DoF.cv<-DoF.krylov<-DoF.naive<-DoF.lanczos<-vector(length=R)
     mse.cv<-mse.naive<-mse.lanczos<-mse.krylov<-mse.null<-vector(length=R)
-    DoF.complete<-sigmahat.krylov<-sigmahat.naive<-sigmahat.lanczos<-matrix(,R,m+1)
+    DoF.complete<-matrix(,R,m+1)
+    sigmahat.krylov<-sigmahat.naive<-sigmahat.lanczos<-sigmahat.cv<-sigmahat.null<-vector(length=R)
     mse.null<-vector(length=R)
+	if (is.null(true.coefficients)==FALSE){
+	model.cv<-model.naive<-model.lanczos<-model.krylov<-model.null<-vector(length=R)
+	}
     for (i in 1:R){
         if (verbose==TRUE){
             cat(paste("iteration no ",i," \n"))
@@ -29,30 +33,35 @@ benchmark.pls<-function(X,y,m=ncol(X),R=20,ratio=0.8,verbose=TRUE,k=10,ratio.sam
         #
         # null model
         mse.null[i]=mean((mean(ytrain)-ytest)^2)
-        # krylov
+	res<-ytrain -mean(ytrain)
+	sigmahat.null[i]<-sqrt(sum(res^2)/(length(ytrain)-1))
         compute.jacobian=FALSE
         time.krylov[i]<-system.time(krylov.object<-pls.ic(Xtrain,ytrain,m=m,naive=FALSE,criterion=criterion,use.kernel=use.kernel,compute.jacobian=compute.jacobian))[3]
-        #sigmahat.krylov[i,]<-as.vector(krylov.object$sigmahat)
+        sigmahat.krylov[i]<-krylov.object$sigmahat[krylov.object$m.opt+1]
         m.crash.krylov[i]<-krylov.object$m.crash
         m.krylov[i]<-krylov.object$m.opt
         # lanczos
         compute.jacobian=TRUE
         time.lanczos[i]<-system.time(lanczos.object<-pls.ic(Xtrain,ytrain,m=m,naive=FALSE,criterion=criterion,use.kernel=use.kernel,compute.jacobian=compute.jacobian))[3]
+	sigmahat.lanczos[i]<-as.vector(lanczos.object$sigmahat[lanczos.object$m.opt+1])
         #sigmahat.lanczos[i,]<-as.vector(lanczos.object$sigmahat)
         DoF.complete[i,]=as.vector(lanczos.object$DoF)
         m.crash.lanczos[i]<-lanczos.object$m.crash
         m.lanczos[i]<-lanczos.object$m.opt
         # naive
         time.naive[i]<-system.time(naive.object<-pls.ic(Xtrain,ytrain,m=m,naive=TRUE,criterion=criterion,use.kernel=use.kernel,compute.jacobian=FALSE))[3]
-        #sigmahat.naive[i,]<-as.vector(naive.object$sigmahat)
+	 sigmahat.naive[i]<-as.vector(naive.object$sigmahat[naive.object$m.opt+1])
+      
         m.naive[i]<-naive.object$m.opt
         # cross-validation
         time.cv[i]<-system.time(cv.object<-pls.cv(Xtrain,ytrain,use.kernel=use.kernel,m=m))[3]
         m.cv[i]<-cv.object$m.opt
+	res<-ytrain - rep(cv.object$intercept,length(ytrain)) - Xtrain%*%cv.object$coefficients
+	sigmahat.cv[i]<-sqrt(sum(res^2)/(length(ytrain)-m.cv[i]-1))
         ######################
         # compute test error #  
         ######################
-        m.max<-max(m.naive[i],m.krylov[i],m.lanczos[i],m.cv[i])
+        m.max<-max(m.naive[i],m.krylov[i],m.lanczos[i],m.cv[i],1)
         pls.object=pls.model(Xtrain,ytrain,Xtest=Xtest,ytest=ytest,m=m.max,compute.DoF=FALSE,compute.jacobian=FALSE,use.kernel=use.kernel)
         mse.naive[i]<-pls.object$mse[m.naive[i]+1]
         mse.cv[i]<-pls.object$mse[m.cv[i]+1]
@@ -65,6 +74,17 @@ benchmark.pls<-function(X,y,m=ncol(X),R=20,ratio=0.8,verbose=TRUE,k=10,ratio.sam
         DoF.krylov[i]=DoF.complete[i,m.krylov[i]+1]
         DoF.lanczos[i]=DoF.complete[i,m.lanczos[i]+1]
         DoF.cv[i]<-DoF.complete[i,m.cv[i]+1]
+	#########################################################################
+	# compute model error, if the true regression coefficients are provided #
+	#########################################################################
+	if (is.null(true.coefficients)==FALSE){
+	model.cv[i]<-sum((true.coefficients-pls.object$coefficients[,m.cv[i]+1])^ 2)
+	model.naive[i]<-sum((true.coefficients-pls.object$coefficients[,m.naive[i]+1])^ 2)
+	model.null[i]<-sum((true.coefficients-pls.object$coefficients[,1])^ 2)
+	model.krylov[i]<-sum((true.coefficients-pls.object$coefficients[,m.krylov[i]+1])^ 2)
+	model.lanczos[i]<-sum((true.coefficients-pls.object$coefficients[,m.lanczos[i]+1])^ 2)
+	
+	}
         }
         #################
         # store results #
@@ -106,7 +126,14 @@ benchmark.pls<-function(X,y,m=ncol(X),R=20,ratio=0.8,verbose=TRUE,k=10,ratio.sam
         TIME<-data.frame(TIME)
         colnames(TIME)<-namen[-5]
         # Sigmahat
-        
+        SIGMAHAT<-matrix(,R,5)
+        SIGMAHAT[,1]<-sigmahat.cv
+        SIGMAHAT[,2]<-sigmahat.krylov
+        SIGMAHAT[,3]<-sigmahat.lanczos
+        SIGMAHAT[,4]<-sigmahat.naive
+        SIGMAHAT[,5]<-sigmahat.null
+	SIGMAHAT<data.frame(SIGMAHAT)
+	colnames(SIGMAHAT)<-namen
         #m.crash
         M.CRASH<-matrix(,R,2)
         M.CRASH[,1]<-m.crash.krylov
@@ -116,9 +143,19 @@ benchmark.pls<-function(X,y,m=ncol(X),R=20,ratio=0.8,verbose=TRUE,k=10,ratio.sam
         # misc
         #DoF.complete=data.frame(DoF.complete)
         #colnames(DoF.complete)=0:m
-
+	ME<-NULL
+	if (is.null(true.coefficients)==FALSE){
+		 ME<-matrix(,R,5)
+		ME[,1]<-model.cv
+		ME[,2]<-model.krylov
+		ME[,3]<-model.lanczos
+		ME[,4]<-model.naive
+		ME[,5]<-model.null
+		ME<-data.frame(ME)
+        	colnames(ME)=namen	
+	}
         
         
 
-return(list(criterion=criterion,MSE=MSE,M=M,DoF=DoF,TIME=TIME,M.CRASH=M.CRASH))
+return(list(criterion=criterion,MSE=MSE,M=M,DoF=DoF,TIME=TIME,M.CRASH=M.CRASH,ME=ME,SIGMAHAT=SIGMAHAT))
 }

@@ -23,14 +23,14 @@ gmdl(sigmahat, n, DoF, yhat)
 \details{
 The gmdl criterion is defined as
 \deqn{gmdl=\frac{n}{2}log(S)+\frac{DoF}{2}log(F)+\frac{1}{2}log(n)}
-with \deqn{S=sigmahat^2}
+with \deqn{S=\hat \sigma ^2}
 Note that it is also possible to use this function for other regression methods than Partial Least Squares.
 
 
 }
 
 \value{
-\item{score}{the vector of the aic values}
+\item{score}{the vector of the gmdl values}
 \item{par}{index of the first local minimum of \code{score}}
 }
 \references{
