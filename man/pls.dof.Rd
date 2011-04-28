@@ -19,7 +19,10 @@ pls.dof(pls.object,n,y,K,m,DoF.max)
   \item{m}{number of components}.
 \item{DoF.max}{upper bound on the Degrees of Freedom.}
 }
-\details{to do.
+\details{This computation of the Degrees of Freedom is based on the equivalence of PLS regression and the projection
+of the response vector \code{y} onto the Krylov space spanned by 
+\deqn{Ky,K^2 y,...,K^m y.}
+Details can be found in Kraemer  and Sugiyama (2011).
 }
 \value{
 \item{coefficients}{matrix of regression coefficients}
@@ -34,8 +37,8 @@ pls.dof(pls.object,n,y,K,m,DoF.max)
 
 \references{
 
-Kraemer, N., Sugiyama M. (2010). "The Degrees of Freedom of Partial Least Squares Regression". preprint, \url{http://arxiv.org/abs/1002.4112}
-
+Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Squares Regression". Journal of the American Statistical Association. ahead of print. doi:10.1198/jasa.2011.tm10107
+\url{http://pubs.amstat.org/doi/abs/10.1198/jasa.2011.tm10107}
 
 
 Kraemer, N., Sugiyama M., Braun, M.L. (2009) "Lanczos Approximations for the Speedup of Kernel Partial Least Squares Regression." Proceedings of the Twelfth International Conference on Artificial Intelligence and Statistics (AISTATS), p. 272-279

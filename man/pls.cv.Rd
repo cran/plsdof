@@ -22,7 +22,9 @@ pls.cv(X, y, k, m,use.kernel=FALSE,compute.covariance=FALSE)
 \item{compute.covariance}{If \code{TRUE}, the function computes the covariance for the cv-optimal regression coefficients.} 
   
 }
-\details{to do
+\details{The data are centered and scaled to unit variance prior to the PLS algorithm. It is possible to estimate the covariance
+matrix of the cv-optimal regression coefficients (\code{compute.covariance=TRUE}). Currently, this is only implemented if
+\code{use.kernel=FALSE}. 
 }
 \value{
 The function returns an object of class "plsdof".
@@ -36,9 +38,8 @@ The function returns an object of class "plsdof".
 }
 \references{
 
-Kraemer, N., Sugiyama M. (2010). "The Degrees of Freedom of Partial Least Squares Regression". preprint, \url{http://arxiv.org/abs/1002.4112}
-
-
+Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Squares Regression". Journal of the American Statistical Association. ahead of print. doi:10.1198/jasa.2011.tm10107
+\url{http://pubs.amstat.org/doi/abs/10.1198/jasa.2011.tm10107}
 
 Kraemer, N., Braun, M.L. (2007) "Kernelizing PLS, Degrees of Freedom, and Efficient Model Selection", Proceedings of the 24th International Conference on Machine Learning, Omni Press, 441 - 448 
 

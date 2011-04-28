@@ -25,7 +25,8 @@ pls.model(X,y,m,Xtest=NULL,ytest=NULL,compute.DoF,compute.jacobian,use.kernel)
   \item{use.kernel}{Should the kernel representation be used to compute the solution. Default is \code{FALSE}.
 }
 }
-\details{to do
+\details{This function computes the Partial Least Squares fit and its Degrees of Freedom. Further, it returns the 
+regression coefficients and various quantities that are needed for model selection in combination with \code{information.criteria}. 
 }
 \value{
 \item{coefficients}{matrix of regression coefficients}
@@ -41,9 +42,8 @@ pls.model(X,y,m,Xtest=NULL,ytest=NULL,compute.DoF,compute.jacobian,use.kernel)
 }
 
 \references{
-Kraemer, N., Sugiyama M. (2010). "The Degrees of Freedom of Partial Least Squares Regression". preprint, \url{http://arxiv.org/abs/1002.4112}
-
-
+Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Squares Regression". Journal of the American Statistical Association. ahead of print. doi:10.1198/jasa.2011.tm10107
+\url{http://pubs.amstat.org/doi/abs/10.1198/jasa.2011.tm10107}
 
 Kraemer, N., Sugiyama, M., Braun, M.L. (2009) "Lanczos Approximations for the Speedup of Partial Least Squares Regression", Proceedings of the 12th International Conference on Artificial Intelligence and Stastistics, 272 - 279 
 

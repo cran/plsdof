@@ -26,7 +26,11 @@ pls.ic(X, y, m,criterion="bic",naive,use.kernel,compute.jacobian,verbose)
 \item{verbose}{If \code{TRUE}, the function prints a warning if the algorithms produce negative Degrees of Freedom. Default is \code{TRUE}.}
 
 }
-\details{to do
+\details{There are two options to estimate the Degrees of Freedom of PLS: \code{naive=TRUE} defines the Degrees of Freedom as
+the number of components +1, and \code{naive=FALSE} uses the generalized notion of Degrees of Freedom. If \code{compute.jacobian=TRUE},
+the function uses the Lanczos decomposition to derive the Degrees of Freedom, otherwise, it uses the Krylov representation. (See 
+Kraemer and Sugiyama (2011) for details.) The latter two methods only differ with respect to the estimation of the noise level.
+
 }
 \value{
 The function returns an object of class "plsdof".
@@ -45,8 +49,8 @@ Akaikie, H. (1973) "Information Theory and an Extension of the Maximum Likelihoo
 Hansen, M., Yu, B. (2001). "Model Selection and Minimum Descripion Length Principle". Journal of
 the American Statistical Association, 96, 746 - 774
 
-Kraemer, N., Sugiyama M. (2010). "The Degrees of Freedom of Partial Least Squares Regression". preprint, \url{http://arxiv.org/abs/1002.4112}
-
+Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Squares Regression". Journal of the American Statistical Association. ahead of print. doi:10.1198/jasa.2011.tm10107
+\url{http://pubs.amstat.org/doi/abs/10.1198/jasa.2011.tm10107}
 
 
 Kraemer, N., Braun, M.L. (2007) "Kernelizing PLS, Degrees of Freedom, and Efficient Model Selection", Proceedings of the 24th International Conference on Machine Learning, Omni Press, 441 - 448 

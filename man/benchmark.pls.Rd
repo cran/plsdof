@@ -28,8 +28,8 @@ benchmark.pls(X,y,m,R,ratio,verbose,k,ratio.samples,use.kernel,criterion,true.co
 
   
 }
-\details{The function estimates the optimal number of PLS components based on four different criteria: (1) Cross-validation,
-(2) information criteria with the naive Degrees of Freedom DoF(m)=M+1, (3) information criteri with the Degrees of Freedom computed via
+\details{The function estimates the optimal number of PLS components based on four different criteria: (1) cross-validation,
+(2) information criteria with the naive Degrees of Freedom DoF(m)=m+1, (3) information criteri with the Degrees of Freedom computed via
 a Lanczos represenation of PLS and (4)  information criteri with the Degrees of Freedom computed via
 a Krylov represenation of PLS. Note that the latter two options only differ with respect to the estimation of the model error.
 
@@ -38,21 +38,19 @@ In addition, the function computes the test error of the "zero model", i.e. \cod
 If \code{true.coefficients} are available, the function also computes the model error for the different methods, i.e. the sum of squared differences between the true and the estimated regression coefficients.
 }
 \value{
-\item{MSE}{data frame of size R x 5. It contains the test error for the five different methods over the R runs.}
-\item{M}{data frame of size R x 5. It contains the optimal number of components for the five different methods over the R runs.}
-\item{DoF}{data frame of size R x 5. It contains the optimal Degrees of Freedom for the five different methods over the R runs.}
-\item{TIME}{data frame of size R x 4. It contains the run for all methods (apart from the zero model) over the R runs.}
+\item{MSE}{data frame of size R x 5. It contains the test error for the five different methods for each of the R runs.}
+\item{M}{data frame of size R x 5. It contains the optimal number of components for the five different methods for each of the R runs.}
+\item{DoF}{data frame of size R x 5. It contains the Degrees of Freedom (corresponding to \code{M}) for the five different methods for each of the R runs.}
+\item{TIME}{data frame of size R x 4. It contains the runtime for all methods (apart from the zero model) for each of the R runs.}
 \item{M.CRASH}{data frame of size R x 2. It contains the number of components for which the Krylov representation and the Lanczos representation return negative Degrees of Freedom, hereby indicating numerical problems.}
-\item{ME}{if \code{true.coefficients} are available, this is a data frame of size R x 5. It contains the model error for the five different methods over the R runs.}
-\item{SIGMAHAT}{data frame of size R x 5. It contains the estimation of the noise level provided  by the five different methods over the R runs.}
+\item{ME}{if \code{true.coefficients} are available, this is a data frame of size R x 5. It contains the model error for the five different methods for each of the R runs.}
+\item{SIGMAHAT}{data frame of size R x 5. It contains the estimation of the noise level provided  by the five different methods for each of  the R runs.}
 
 }
 \references{
 
-Kraemer, N., Sugiyama M. (2010). "The Degrees of Freedom of Partial Least Squares Regression". preprint, \url{http://arxiv.org/abs/1002.4112}
-
-
-
+Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Squares Regression". Journal of the American Statistical Association. ahead of print. doi:10.1198/jasa.2011.tm10107
+\url{http://pubs.amstat.org/doi/abs/10.1198/jasa.2011.tm10107}
 
 }
 \author{Nicole Kraemer
@@ -62,7 +60,13 @@ Kraemer, N., Sugiyama M. (2010). "The Degrees of Freedom of Partial Least Square
 \code{\link{pls.ic}}, \code{\link{pls.cv}}
 }
 \examples{
-# to do
+# generate artificial data
+n<-50 # number of examples
+p<-5 # number of variables
+X<-matrix(rnorm(n*p),ncol=p)
+true.coefficients<-runif(p,1,3)
+y<-X%*%true.coefficients + rnorm(n,0,5)
+my.benchmark<-benchmark.pls(X,y,R=10,true.coefficients=true.coefficients)
 }
 
 \keyword{multivariate}
