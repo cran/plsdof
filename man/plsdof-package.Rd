@@ -17,8 +17,8 @@ Further, cross-validation procedures for Ridge Regression and Principal Componen
 \tabular{ll}{
 Package: \tab plsdof\cr
 Type: \tab Package\cr
-Version: \tab 0.2\cr
-Date: \tab 2010-02-22\cr
+Version: \tab 0.2-3\cr
+Date: \tab 2012-07-26\cr
 License: \tab GPL (>=2)\cr
 LazyLoad: \tab yes\cr
 }
@@ -30,7 +30,7 @@ Maintainer: Nicole Kraemer <kraemer@ma.tum.de>
 }
 \references{
 
-Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Squares Regression". Journal of the American Statistical Association. ahead of print. doi:10.1198/jasa.2011.tm10107
+Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Squares Regression". Journal of the American Statistical Association 106 (494)
 \url{http://pubs.amstat.org/doi/abs/10.1198/jasa.2011.tm10107}
 
 Kraemer, N., Braun, M.L. (2007) "Kernelizing PLS, Degrees of Freedom, and Efficient Model Selection", Proceedings of the 24th International Conference on Machine Learning, Omni Press, 441 - 448 

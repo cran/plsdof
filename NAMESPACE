@@ -1,0 +1,4 @@
+
+## and exported functions
+export(benchmark.pls,coef.plsdof,dA,dvvtz,information.criteria,krylov,normalize,pcr,pls.dof,pls.model,tr,vvtz,benchmark.regression,compute.lower.bound,dnormalize,first.local.minimum, kernel.pls.fit, linear.pls.fit, pcr.cv,pls.cv, pls.ic, ridge.cv,vcov.plsdof)
+

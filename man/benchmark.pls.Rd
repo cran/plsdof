@@ -49,7 +49,7 @@ If \code{true.coefficients} are available, the function also computes the model 
 }
 \references{
 
-Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Squares Regression". Journal of the American Statistical Association. ahead of print. doi:10.1198/jasa.2011.tm10107
+Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Squares Regression". Journal of the American Statistical Association 106 (494)
 \url{http://pubs.amstat.org/doi/abs/10.1198/jasa.2011.tm10107}
 
 }

@@ -3,8 +3,8 @@ Type: Package
 Title: Degrees of Freedom and Statistical Inference for Partial Least
         Squares Regression
 Depends: MASS
-Version: 0.2-2
-Date: 2011-04-28
+Version: 0.2-3
+Date: 2012-07-26
 Author: Nicole Kraemer, Mikio L. Braun
 Maintainer: Nicole Kraemer <kraemer@ma.tum.de>
 Description: The plsdof package provides Degrees of Freedom estimates
@@ -18,6 +18,6 @@ Description: The plsdof package provides Degrees of Freedom estimates
         Regression are available.
 License: GPL (>= 2)
 LazyLoad: yes
-Packaged: 2011-04-28 10:20:00 UTC; kranic
+Packaged: 2012-07-26 10:12:20 UTC; kraemer
 Repository: CRAN
-Date/Publication: 2011-04-28 13:49:26
+Date/Publication: 2012-07-26 10:31:59
