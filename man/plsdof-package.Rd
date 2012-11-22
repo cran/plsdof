@@ -17,8 +17,8 @@ Further, cross-validation procedures for Ridge Regression and Principal Componen
 \tabular{ll}{
 Package: \tab plsdof\cr
 Type: \tab Package\cr
-Version: \tab 0.2-3\cr
-Date: \tab 2012-07-26\cr
+Version: \tab 0.2-4\cr
+Date: \tab 2012-11-22\cr
 License: \tab GPL (>=2)\cr
 LazyLoad: \tab yes\cr
 }

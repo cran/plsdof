@@ -6,13 +6,14 @@
 \description{This function computes the Principal Components Regression (PCR) fit.
 }
 \usage{
-pcr(X,y,eps)
+pcr(X,y,scale,eps)
 }
 \arguments{
  \item{X}{matrix of predictor observations.
 }
   \item{y}{vector of response observations. The length of \code{y} is the same as the number of rows of \code{X}.
 }
+\item{scale}{Should the predictor variables be scaled to unit variance? Default is \code{TRUE}.}
   \item{eps}{precision. Eigenvalues of the correlation matrix of \code{X} that are smaller than \code{eps} are set to 0. The default value is \code{eps=10^{-6}.}
 }
   

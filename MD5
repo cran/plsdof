@@ -1,4 +1,4 @@
-bd17b7009f76c2d1f381534911072693 *DESCRIPTION
+275e4e810a65ad98d7882fd696312341 *DESCRIPTION
 009fac64e94782f7e039e03a2ba2f7f5 *NAMESPACE
 9b64c49c51362ff979059612a78a6987 *R/benchmark.pls.R
 0e5873e14c6ed0a7cce01bd1794e6312 *R/benchmark.regression.R
@@ -13,9 +13,9 @@ de7fe031c867e0c7b38a9ca1e41ce692 *R/dvvtz.r
 fc8bc82da1253b1e5a4421f822a06b59 *R/krylov.r
 8676089d839f7e694725a84ad40456a8 *R/linear.pls.fit.R
 9921464aaffdb9de086aba760734663d *R/normalize.R
-cf221ac11e026e3901f9c68434462636 *R/pcr.R
-0a2d1a68b89c6f5537b3246155ed77c3 *R/pcr.cv.R
-712d7fb35721fcf2707a86623780453d *R/pls.cv.R
+6892dfc35dc5ddae2b4fd9e024ad319c *R/pcr.R
+3134faca4ebfabdc77747e130bb703c8 *R/pcr.cv.R
+0b0e81d99804f7745a05a9151320f5d6 *R/pls.cv.R
 1f1fd5582fff6b3e443f4ef19ff0e88b *R/pls.dof.R
 a4078910e8f3d415d255369a8dd4af9d *R/pls.ic.R
 8af7765039678d7c05cdf02d9fe73aea *R/pls.model.R
@@ -36,13 +36,13 @@ b8067b63beee87b4f6a807650e036a5b *man/information.criteria.Rd
 06790ba5eefbf77aa8144389a1f38b3b *man/krylov.Rd
 308d4f4f8fcf73e85a77e6579561e050 *man/linear.pls.fit.Rd
 f7c0e0c10e56d2484ab53cd4c391276d *man/normalize.Rd
-e5764c3f96ac9edc045014ed21ba819d *man/pcr.Rd
-bd30a89bcc4add59efecb536a79cb221 *man/pcr.cv.Rd
-f253ec87eecf419431244841467cfeee *man/pls.cv.Rd
+2c954e52c157067cfdd101b22982386b *man/pcr.Rd
+2d367d54ffc0da424869793522e74df6 *man/pcr.cv.Rd
+99625fa90f356f2ce21504d7c4761bf9 *man/pls.cv.Rd
 e5165711b1e4eab07e9b5e9c642d1a6e *man/pls.dof.Rd
 43807cda97f1bff95906b3ed570e6bc3 *man/pls.ic.Rd
 f91d329aee45ac8996ed8276885dd493 *man/pls.model.Rd
-a94621e605112b46aa247bebfac45596 *man/plsdof-package.Rd
+bc838f1f35c3a1bbf1088ba17a45a9a8 *man/plsdof-package.Rd
 aae2b631fe7164848dd785a87ef4217b *man/ridge.cv.Rd
 e62b797b4cd25ee79cf8f140332a008d *man/tr.Rd
 50a7b4b17da72afe7b92047f65c9aa89 *man/vcov.plsdof.Rd

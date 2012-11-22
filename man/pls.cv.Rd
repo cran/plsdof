@@ -6,7 +6,7 @@
 \description{This function computes the optimal model parameter using cross-validation.
 }
 \usage{
-pls.cv(X, y, k, m,use.kernel=FALSE,compute.covariance=FALSE)
+pls.cv(X, y, k, groups,m,use.kernel=FALSE,compute.covariance=FALSE)
 }
 \arguments{
  \item{X}{matrix of predictor observations.
@@ -14,6 +14,7 @@ pls.cv(X, y, k, m,use.kernel=FALSE,compute.covariance=FALSE)
   \item{y}{vector of response observations. The length of \code{y} is the same as the number of rows of \code{X}.
 }
 \item{k}{number of cross-validation splits. Default is 10.}
+\item{groups}{an optional vector with the same length as \code{y}. It encodes a partitioning of the data into distinct subgroups. If \code{groups} is provided, \code{k=10} is ignored and instead, cross-validation is performed based on the partioning. Default is \code{NULL}.}
   \item{m}{maximal number of Partial Least Squares components. Default is \code{m=ncol(X)}.
 }
   \item{use.kernel}{Use kernel representation? Default is \code{use.kernel=FALSE}.
@@ -28,6 +29,7 @@ matrix of the cv-optimal regression coefficients (\code{compute.covariance=TRUE}
 }
 \value{
 The function returns an object of class "plsdof".
+\item{cv.error.matrix}{matrix of cross-validated errors. A row corresponds to one cross-validation split.}
 \item{cv.error}{vector of cross-validated errors}
 \item{m.opt}{optimal number of components}
 \item{intercept}{intercept}
@@ -59,6 +61,9 @@ y<-rnorm(n)
 
 # compute linear PLS
 pls.object<-pls.cv(X,y,m=ncol(X))
-}
 
+# define random partioning
+groups<-sample(c("a","b","c"),n,replace=TRUE)
+pls.object1<-pls.cv(X,y,groups=groups)
+}
 \keyword{multivariate}

@@ -1,4 +1,4 @@
-pcr<-function(X,y,eps=0.000001){
+pcr<-function(X,y,scale=TRUE,eps=0.000001){
     p <- ncol(X)
     n <- nrow(X)
     m<-p
@@ -6,8 +6,13 @@ pcr<-function(X,y,eps=0.000001){
     mean.y <- mean(y)
     y <- scale(y, scale = FALSE)
     mean.X <- apply(X, 2, mean)
+    if (scale==FALSE){
+        sd.X<-rep(1,p)
+    }
+    if (scale==TRUE){
     sd.X <- apply(X, 2, sd)
     sd.X[sd.X == 0] = 1
+    }
     X <- X - rep(1, nrow(X)) %*% t(mean.X)
     X <- X/(rep(1, nrow(X)) %*% t(sd.X))
     S<-t(X)%*%X
