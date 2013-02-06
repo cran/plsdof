@@ -1,0 +1,11 @@
+******************************************
+*** Changes for R-package plsdof       ***
+*** Nicole Kraemer <kraemer@ma.tum.de> ***
+******************************************
+
+--- Version 0.2-5 (February 06, 2013) ---
+
+- The runtime for pcr and pcr.cv is improved, especially in the p>>n scenario.
+	(1) Instead of an eigen decomposition of t(X)%*%X, a singular value decomposition of X is used.
+	(2) It is possible to specify the maximum number of principal components
+
