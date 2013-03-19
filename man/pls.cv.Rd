@@ -6,7 +6,7 @@
 \description{This function computes the optimal model parameter using cross-validation.
 }
 \usage{
-pls.cv(X, y, k, groups,m,use.kernel=FALSE,compute.covariance=FALSE)
+pls.cv(X, y, k, groups,m,use.kernel=FALSE,compute.covariance=FALSE,method.cor)
 }
 \arguments{
  \item{X}{matrix of predictor observations.
@@ -21,20 +21,24 @@ pls.cv(X, y, k, groups,m,use.kernel=FALSE,compute.covariance=FALSE)
 }
   
 \item{compute.covariance}{If \code{TRUE}, the function computes the covariance for the cv-optimal regression coefficients.} 
-  
+ \item{method.cor}{How should the correlation to the response be computed? Default is ''pearson''.}
 }
 \details{The data are centered and scaled to unit variance prior to the PLS algorithm. It is possible to estimate the covariance
 matrix of the cv-optimal regression coefficients (\code{compute.covariance=TRUE}). Currently, this is only implemented if
 \code{use.kernel=FALSE}. 
 }
 \value{
-The function returns an object of class "plsdof".
-\item{cv.error.matrix}{matrix of cross-validated errors. A row corresponds to one cross-validation split.}
-\item{cv.error}{vector of cross-validated errors}
-\item{m.opt}{optimal number of components}
-\item{intercept}{intercept}
-\item{coefficients}{vector of regression coefficients}
-\item{covariance}{If \code{TRUE} and \code{use.kernel=FALSE}, the covariance of the cv-optimal regression coefficients is returned.}
+\item{cv.error.matrix}{matrix of cross-validated errors based on mean squared error. A row corresponds to one cross-validation split.}
+\item{cv.error}{vector of cross-validated errors based on mean squared error}
+\item{m.opt}{optimal number of components based on mean squared error}
+\item{intercept}{intercept of the optimal model, based on mean squared error}
+\item{coefficients}{vector of regression coefficients of the optimal model, based on mean squared error}
+\item{cor.error.matrix}{matrix of cross-validated errors based on  correlation. A row corresponds to one cross-validation split.}
+\item{cor.error}{vector of cross-validated errors based on correlation}
+\item{m.opt.cor}{optimal number of components based on  correlation}
+\item{intercept.cor}{intercept of the optimal model, based on  correlation}
+\item{coefficients.cor}{vector of regression coefficients of the optimal model, based on mean squared error}
+\item{covariance}{If \code{TRUE} and \code{use.kernel=FALSE}, the covariance of the cv-optimal regression coefficients (based on mean squared error) is returned.}
 
 
 }

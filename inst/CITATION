@@ -7,13 +7,12 @@ citEntry(entry = "Article",
   journal      = "Journal of the American Statistical Association",
   year         = "2011",
   volume       = "106",
-  number       = "494",
-  
+  number       = "494",  
 
   textVersion  =
   paste("N. Kraemer, M. Sugiyama (2012).",
         "The Degrees of Freedom of Partial Least Squares Regression",
-        "Journal of the American Statistical Association 106(494)",
+        "Journal of the American Statistical Association 106 (494)"
         )
 )
 

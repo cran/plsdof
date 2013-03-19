@@ -6,7 +6,7 @@
   This function computes the optimal ridge regression model based on cross-validation.
 }
 \usage{
-ridge.cv(X, y, lambda, scale = TRUE, k = 10, plot.it = FALSE)
+ridge.cv(X, y, lambda, scale = TRUE, k = 10, plot.it = FALSE,groups=NULL,method.cor="pearson",compute.jackknife)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -18,6 +18,9 @@ ridge.cv(X, y, lambda, scale = TRUE, k = 10, plot.it = FALSE)
   \item{scale}{Scale the columns of X? Default is scale=TRUE.}
   \item{k}{Number of splits in  \code{k}-fold cross-validation. Default value is \code{k}=10. }
   \item{plot.it}{Plot the cross-validation error as a function of \code{lambda}? Default is FALSE.}
+  \item{groups}{an optional vector with the same length as \code{y}. It encodes a partitioning of the data into distinct subgroups. If \code{groups} is provided, \code{k=10} is ignored and instead, cross-validation is performed based on the partioning. Default is \code{NULL}.}
+\item{method.cor}{How should the correlation to the response be computed? Default is ''pearson''.}
+\item{compute.jackknife}{Logical. If \code{TRUE}, the regression coefficients on each of the cross-validation splits is stored. Default is \code{TRUE}. }
 }
 
 \details{Based on the regression coefficients \code{coefficients.jackknife} computed on the cross-validation
@@ -25,9 +28,16 @@ splits, we can estimate their mean and their variance using the jackknife. We re
 normally distributed \code{y}-values, we can also derive the true distribution of the regression coefficients.}
 
 \value{
-  \item{intercept}{cross-validation optimal intercept}
-  \item{coefficients}{cross-validation optimal regression coefficients}
-  \item{lambda.opt}{optimal value of \code{lambda}.}
+  \item{cv.error.matrix}{matrix of cross-validated errors based on mean squared error. A row corresponds to one cross-validation split.}
+\item{cv.error}{vector of cross-validated errors based on mean squared error}
+\item{lambda.opt}{optimal value of \code{lambda}, based on mean squared error}
+\item{intercept}{intercept of the optimal model, based on mean squared error}
+\item{coefficients}{vector of regression coefficients of the optimal model, based on mean squared error}
+\item{cor.error.matrix}{matrix of cross-validated errors based on  correlation. A row corresponds to one cross-validation split.}
+\item{cor.error}{vector of cross-validated errors based on correlation}
+\item{lambda.opt.cor}{optimal value of \code{lambda}, based on  correlation}
+\item{intercept.cor}{intercept of the optimal model, based on  correlation}
+\item{coefficients.cor}{vector of regression coefficients of the optimal model, based on mean squared error}
   \item{coefficients.jackknife}{Array of the regression coefficients on each of the cross-validation splits. The dimension is \code{ncol(X) x length(lambda) x k}.}
 
 }

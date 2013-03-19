@@ -6,7 +6,7 @@
 \description{This function computes the Principal Components Regression (PCR) fit.
 }
 \usage{
-pcr(X,y,scale,m,eps)
+pcr(X,y,scale,m,eps,supervised)
 }
 \arguments{
  \item{X}{matrix of predictor observations.
@@ -18,9 +18,9 @@ pcr(X,y,scale,m,eps)
 }
   \item{eps}{precision. Eigenvalues of the correlation matrix of \code{X} that are smaller than \code{eps} are set to 0. The default value is \code{eps=10^{-6}.}
 }
-  
+ \item{supervised}{Should the principal components be sorted by decreasing squared correlation to the response? Default is FALSE.} 
 }
-\details{The function first scales all predictor variables to unit variance, and then computes the PCR fit for all components.
+\details{The function first scales all predictor variables to unit variance, and then computes the PCR fit for all components. Is \code{supervised=TRUE}, we sort the principal correlation according to the squared correlation to the response.
 }
 \value{
 \item{coefficients}{matrix of regression coefficients, including the coefficients of the null model, i.e. the constant model \code{mean(y)}. }

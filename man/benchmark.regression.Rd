@@ -8,7 +8,7 @@ is the mean of \code{y}. In the first three cases,
 the optimal model is selected via cross-validation.
 }
 \usage{
-benchmark.regression(X, y, m, R,ratio, verbose,k, nsamples, use.kernel)
+benchmark.regression(X, y, m, R,ratio, verbose,k, nsamples, use.kernel,supervised)
 }
 \arguments{
  \item{X}{matrix of predictor observations.
@@ -23,7 +23,7 @@ benchmark.regression(X, y, m, R,ratio, verbose,k, nsamples, use.kernel)
 \item{k}{number of cross-validation splits. Default is 10.}
 \item{nsamples}{number of data points. Default is \code{nrow(X)}. }
 \item{use.kernel}{Use kernel representation for PLS? Default is \code{use.kernel=FALSE}.}
-  
+\item{supervised}{Should the principal components be sorted by decreasing squared correlation to the response? Default is FALSE.}   
   
 }
 \details{The function computes the test error, the cross-validation-optimal model parameters, their corresponding Degrees of Freedom, and the

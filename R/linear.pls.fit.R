@@ -4,7 +4,10 @@ linear.pls.fit=function (X, y, m = ncol(X),compute.jacobian=FALSE,DoF.max=min(nc
     m<-min(m,DoF.max)
     Beta <- matrix(, p, m) # matrix of regression coefficients
     W <- V <- Beta
-    dW <- dBeta <- dV <- array(dim = c(m, p, n))
+    dW<-dBeta<-dV<-NULL
+    if (compute.jacobian==TRUE){
+    	dW <- dBeta <- dV <- array(dim = c(m, p, n))
+    }
     X0<-X
     y0<-y
     # scaling of the data

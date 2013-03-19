@@ -1,4 +1,4 @@
-benchmark.regression=function (X, y, m = ncol(X), R = 20, ratio = 0.8, verbose = TRUE,k = 10, nsamples = nrow(X), use.kernel = FALSE) {
+benchmark.regression=function (X, y, m = ncol(X), R = 20, ratio = 0.8, verbose = TRUE,k = 10, nsamples = nrow(X), use.kernel = FALSE,supervised=FALSE) {
     n <- nsamples
     m.pls <- m.pcr<-lambda.ridge<-vector(length = R) # vector of optimal model parameters
     ntrain <- floor(n * ratio) # number of training observations
@@ -32,7 +32,7 @@ benchmark.regression=function (X, y, m = ncol(X), R = 20, ratio = 0.8, verbose =
         mse.pls[i] <- pls.object$mse[m.pls[i] + 1]
         DoF.pls[i]<-pls.object$DoF[m.pls[i]+1]
         #pcr
-        pcr.object<-pcr.cv(Xtrain,ytrain,k=k)
+        pcr.object<-pcr.cv(Xtrain,ytrain,k=k,m=m,supervised=supervised)
         m.pcr[i]<-pcr.object$m.opt
         DoF.pcr[i]<-m.pcr[i]+1
         pcr.final<-pcr(Xtrain,ytrain)

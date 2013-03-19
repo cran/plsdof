@@ -6,7 +6,7 @@
 \description{This function computes the Partial Least Squares fit.
 }
 \usage{
-pls.model(X,y,m,Xtest=NULL,ytest=NULL,compute.DoF,compute.jacobian,use.kernel)
+pls.model(X,y,m,Xtest=NULL,ytest=NULL,compute.DoF,compute.jacobian,use.kernel,method.cor)
 }
 \arguments{
  \item{X}{matrix of predictor observations.
@@ -24,6 +24,7 @@ pls.model(X,y,m,Xtest=NULL,ytest=NULL,compute.DoF,compute.jacobian,use.kernel)
 \item{compute.jacobian}{Should the first derivative of the regression coefficients be computed as well? Default is \code{FALSE}}
   \item{use.kernel}{Should the kernel representation be used to compute the solution. Default is \code{FALSE}.
 }
+ \item{method.cor}{How should the correlation to the response be computed? Default is ''pearson''.}
 }
 \details{This function computes the Partial Least Squares fit and its Degrees of Freedom. Further, it returns the 
 regression coefficients and various quantities that are needed for model selection in combination with \code{information.criteria}. 
@@ -39,6 +40,7 @@ regression coefficients and various quantities that are needed for model selecti
 \item{covariance}{if \code{compute.jacobian} is \code{TRUE}, the function returns the array of covariance matrices for the PLS regression coefficients.}
 \code{prediction}{if \code{Xtest} is provided, the predicted y-values for \code{Xtest}.}
 \code{mse}{if \code{Xtest} and \code{ytest} are provided, the mean squared error on the test data.} 
+\code{cor}{if \code{Xtest} and \code{ytest} are provided, the correlation to the response on the test data.} 
 }
 
 \references{
