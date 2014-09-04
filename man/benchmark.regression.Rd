@@ -54,10 +54,10 @@ Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Square
 # Boston Housing data
 library(MASS)
 data(Boston)
-X<-as.matrix(Boston[,-14])
+X<-as.matrix(Boston[,1:4]) # select the first 3 columns as predictor variables
 y<-as.vector(Boston[,14])
 
-my.benchmark<-benchmark.regression(X,y,ratio=0.5)
+my.benchmark<-benchmark.regression(X,y,ratio=0.5,R=10,k=5)
 
 # boxplot of the mean squared error
 

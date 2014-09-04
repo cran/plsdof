@@ -1,7 +1,11 @@
-******************************************
-*** Changes for R-package plsdof       ***
-*** Nicole Kraemer <kraemer@ma.tum.de> ***
-******************************************
+****************************************************
+*** Changes for R-package plsdof                 ***
+*** Nicole Kraemer <kraemer_r_packages@yahoo.de> ***
+****************************************************
+
+--- Version 0.2-7 (September 04, 2014)
+
+Updated maintainer's email address.
 
 --- Version 0.2-6 (March 19, 2013) ---
 

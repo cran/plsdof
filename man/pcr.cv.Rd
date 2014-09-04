@@ -6,7 +6,8 @@
 \description{This function computes the optimal model parameter using cross-validation. Mdel selection is based on mean squared error and correlation to the response, respectively.
 }
 \usage{
-pcr.cv(X,y,k=10,m,groups=NULL,scale=TRUE,eps=0.000001,plot.it=FALSE,compute.jackknife,method.cor,supervised)
+pcr.cv(X,y,k=10,m,groups=NULL,scale=TRUE,eps=0.000001,
+           plot.it=FALSE,compute.jackknife,method.cor,supervised)
 }
 \arguments{
  \item{X}{matrix of predictor observations.

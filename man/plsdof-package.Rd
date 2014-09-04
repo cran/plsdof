@@ -17,8 +17,8 @@ Further, cross-validation procedures for Ridge Regression and Principal Componen
 \tabular{ll}{
 Package: \tab plsdof\cr
 Type: \tab Package\cr
-Version: \tab 0.2-6\cr
-Date: \tab 2013-03-19\cr
+Version: \tab 0.2-7\cr
+Date: \tab 2014-09-04\cr
 License: \tab GPL (>=2)\cr
 LazyLoad: \tab yes\cr
 }
@@ -26,7 +26,7 @@ LazyLoad: \tab yes\cr
 }
 \author{Nicole Kraemer, Mikio L. Braun
 
-Maintainer: Nicole Kraemer <kraemer@ma.tum.de>
+Maintainer: Nicole Kraemer <kraemer_r_packages@yahoo.de>
 }
 \references{
 

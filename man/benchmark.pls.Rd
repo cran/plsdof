@@ -6,7 +6,8 @@
 \description{This function computes the test error over several runs  for different model selection strategies.
 }
 \usage{
-benchmark.pls(X,y,m,R,ratio,verbose,k,ratio.samples,use.kernel,criterion,true.coefficients)
+benchmark.pls(X,y,m,R,ratio,verbose,k,ratio.samples,
+          use.kernel,criterion,true.coefficients)
 }
 \arguments{
  \item{X}{matrix of predictor observations.

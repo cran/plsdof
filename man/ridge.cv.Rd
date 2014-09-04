@@ -6,7 +6,8 @@
   This function computes the optimal ridge regression model based on cross-validation.
 }
 \usage{
-ridge.cv(X, y, lambda, scale = TRUE, k = 10, plot.it = FALSE,groups=NULL,method.cor="pearson",compute.jackknife)
+ridge.cv(X, y, lambda, scale = TRUE, k = 10, plot.it = FALSE,
+       groups=NULL,method.cor="pearson",compute.jackknife)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
