@@ -3,10 +3,10 @@ Type: Package
 Title: Degrees of Freedom and Statistical Inference for Partial Least
         Squares Regression
 Depends: MASS
-Version: 0.2-7.1
-Date: 2014-09-04
+Version: 0.2-8
+Date: 2018-08-27
 Author: Nicole Kraemer, Mikio L. Braun
-Maintainer: ORPHANED
+Maintainer: Frederic Bertrand <frederic.bertrand@math.unistra.fr>
 Description: The plsdof package provides Degrees of Freedom estimates
         for Partial Least Squares (PLS) Regression. Model selection for
         PLS is based on various information criteria (aic, bic, gmdl)
@@ -18,11 +18,7 @@ Description: The plsdof package provides Degrees of Freedom estimates
         Regression are available.
 License: GPL (>= 2)
 LazyLoad: yes
-Packaged: 2018-07-21 16:59:31 UTC; hornik
+Packaged: 2018-08-28 18:47:28 UTC; fbertran
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2018-07-21 17:11:59 UTC
-X-CRAN-Original-Maintainer: Nicole Kraemer
-        <kraemer_r_packages@yahoo.de>
-X-CRAN-Comment: Orphaned and corrected on 2018-07-21 as check problems
-        were not corrected despite reminders.
+Date/Publication: 2018-08-28 21:20:02 UTC

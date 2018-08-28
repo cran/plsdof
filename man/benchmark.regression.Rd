@@ -41,7 +41,7 @@ sum-of-squared-residuals (SSR) for PLS and PCR.
 \references{
 
 Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Squares Regression". Journal of the American Statistical Association 106 (494)
-\url{http://pubs.amstat.org/doi/abs/10.1198/jasa.2011.tm10107}
+\url{https://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10107}
 
 }
 \author{Nicole Kraemer
@@ -51,6 +51,7 @@ Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Square
 \code{\link{pls.cv}}, \code{\link{pcr.cv}}, \code{\link{benchmark.pls}}
 }
 \examples{
+\donttest{
 # Boston Housing data
 library(MASS)
 data(Boston)
@@ -66,6 +67,7 @@ boxplot(my.benchmark$MSE,outline=FALSE)
 # boxplot of the degrees of freedom, without the null model
 
 boxplot(my.benchmark$DoF[,-4])
+}
 }
 
 \keyword{multivariate}
