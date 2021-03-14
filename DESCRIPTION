@@ -3,8 +3,8 @@ Type: Package
 Title: Degrees of Freedom and Statistical Inference for Partial Least
         Squares Regression
 Depends: MASS
-Version: 0.2-9
-Date: 2019-01-31
+Version: 0.3-0
+Date: 2021-03-13
 Author: Nicole Kraemer, Mikio L. Braun
 Maintainer: Frederic Bertrand <frederic.bertrand@math.unistra.fr>
 Description: The plsdof package provides Degrees of Freedom estimates
@@ -13,16 +13,18 @@ Description: The plsdof package provides Degrees of Freedom estimates
         or on cross-validation. Estimates for the mean and covariance
         of the PLS regression coefficients are available. They allow
         the construction of approximate confidence intervals and the
-        application of test procedures. Further, cross-validation
-        procedures for Ridge Regression and Principal Components
-        Regression are available.
+        application of test procedures (Kramer and Sugiyama 
+        2012 <doi:10.1198/jasa.2011.tm10107>).
+        Further, cross-validation procedures for Ridge Regression and 
+        Principal Components Regression are available.
 License: GPL (>= 2)
 LazyLoad: yes
-Packaged: 2019-01-31 17:51:20 UTC; fbertran
+Packaged: 2021-03-13 20:34:12 UTC; fbertran
 NeedsCompilation: no
 Encoding: UTF-8
 Repository: CRAN
-Date/Publication: 2019-01-31 19:00:03 UTC
-RoxygenNote: 6.1.1
-URL: https://github.com/fbertran/plsdof
-BugReports: https://github.com/fbertran/plsdof/issues
+Date/Publication: 2021-03-14 15:40:02 UTC
+RoxygenNote: 7.1.1
+URL: https://github.com/fbertran/plsdof/,
+        https://fbertran.github.io/plsdof/
+BugReports: https://github.com/fbertran/plsdof/issues/
