@@ -1,6 +1,6 @@
-f50e1762418485d82e6b7d7e6cbe91f7 *DESCRIPTION
+eda7248b11816c1308b49bc43048744c *DESCRIPTION
 1e08f578b1f2b6fabb330c8128f49155 *NAMESPACE
-5128aa9b2e3769240dd8f81346c32333 *NEWS.md
+4209b8c36ac9ab58986c65db6f2b70e3 *NEWS.md
 413931327abf199b8e71c4bbcd8175d5 *R/benchmark.pls.R
 4945314ee67c63b5918b95dca64b7582 *R/benchmark.regression.R
 59c35f006c76ffa107a219ee67a74f32 *R/coef.plsdof.R
@@ -18,14 +18,14 @@ a2e817dad30e738881af595cc8b096c3 *R/linear.pls.fit.R
 41dc5f622d98c21c2842fcf3e9452ca7 *R/pcr.cv.R
 48127cacf2ef39ff31bc2b79885463de *R/pls.cv.R
 1286f107ac7dc4ac87c83bab9db0921d *R/pls.dof.R
-49a9afab4db989ff1e6468e1f69b6cbb *R/pls.ic.R
+5fcd7bb6858084027bd72722dcc778c9 *R/pls.ic.R
 605fa70dd3216d8689ddeea7e4702c69 *R/pls.model.R
-c2a3f401f705a6ff89c7ce6bb6b6d2ee *R/plsdof-package.R
+92235c6050da7322d830fbf7a8dcc290 *R/plsdof-package.R
 8783deec568a55dcfee61fb98bd80495 *R/ridge.cv.R
 949f45626484d0a6c76773c9f533c4cc *R/tr.r
 fdbadba9abf653f0d91c71cc75292957 *R/vcov.plsdof.R
 0339bd3c6328f35c9aca6b56b76fa0a5 *R/vvtz.r
-3960a05c300e408e54193cbe182de52b *README.md
+80d3d37c57797d7d33a4814eb46cad3a *README.md
 8f14aeda8701a972cb662965a8966a9b *inst/CITATION
 0fa251e970c5f8b28b277326b715b9bc *inst/ChangeLog
 20e2dacc8c6b2d7961d93885078ba796 *man/benchmark.pls.Rd
@@ -35,7 +35,7 @@ fdbadba9abf653f0d91c71cc75292957 *R/vcov.plsdof.R
 e3b0efa1a1478bf25b5cec44c2454d92 *man/dA.Rd
 9f84d901f296549e68774956465344b2 *man/dnormalize.Rd
 44ddf1a5cdbaa9fee0821d902838c89a *man/dvvtz.Rd
-5b931a469bce6638b3b335ffb635c318 *man/figures/README-pls1pnaive-1.png
+e0803f1e246b1cd28910677703ab7207 *man/figures/README-pls1pnaive-1.png
 c8c9ce07c6c07a883771dea38cd0dbfa *man/figures/logo.png
 560fc3f7243a26a0046bc33d73412431 *man/first.local.minimum.Rd
 1c5b9e93eac98c5c74efaa08a52ceafc *man/information.criteria.Rd
@@ -49,7 +49,7 @@ d21aaa57e6885fbfd32af9b1dcaad348 *man/pls.cv.Rd
 3762c3de3f76523f3d4f37a3fa76b1c9 *man/pls.dof.Rd
 0b9d8fb55296f329deb22df6677c5f67 *man/pls.ic.Rd
 b035e09a287b9127a467eaeac4fdaffa *man/pls.model.Rd
-e3bc41d0e14647e51983dfcaacff69b4 *man/plsdof-package.Rd
+3e3616bf8f2b85c40d245359c73f4924 *man/plsdof-package.Rd
 2d995b1a9557f47aa050a7dd9c4536fb *man/ridge.cv.Rd
 ce7806343c6c35de96f9f0661d862a0d *man/tr.Rd
 0fa24d4a44b4c321db35c8fe4c743f1b *man/vcov.plsdof.Rd
